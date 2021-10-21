@@ -1,17 +1,13 @@
 import React from "react";
+import  Header  from "../components/header/Header";
 
 export default function App(){
 
+  
 
     return(
         <div>
-            <header className="header">
-                condicion ? 
-                (<img src="./images/logo-desktop.svg" alt="Modo Diurno" />) : <img src="./images/logo-mobile-modo-noct.svg" alt="Modo Nocturno" />
-                <button>
-                    condicion ? "MODO LIGTH" : "MODO DARK"
-                </button>
-            </header>
+            <Header/>
             <div>
                 <h1>¡Inspirate y busca los mejores <span className="GIFS">GIFS</span>!</h1>
                 <img src="./images/ilustra_header.svg" alt="Ilustracion" />
