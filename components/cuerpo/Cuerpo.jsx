@@ -9,13 +9,17 @@ export default function Cuerpo() {
           ¡Inspirate y busca los mejores <span className="GIFS">GIFS</span>!
         </h1>
       </article>
-      <img src="./images/ilustra_header.svg" alt="Ilustracion" />
+      <div className="imageheader">
+        <img src="./images/ilustra_header.svg" alt="Ilustracion" />
+      </div>
       <form className="buscador">
-        <div>
-          <input type="text" placeholder="Buscar Gif" />
-        </div>
-        <button>
-          <img src="" alt="Busqueda" />
+        <input type="text" placeholder="Buscar Gif" />
+        <button className="busqueda">
+          {mostrarnocturno ? (
+            <img src="./images/icon.search.svg" alt="Ligth" />
+          ) : (
+            <img src="./images/icon-search-mod-noc.svg" alt="" />
+          )}
         </button>
       </form>
     </section>
