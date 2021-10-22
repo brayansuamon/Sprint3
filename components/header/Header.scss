@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.modos {
+  border-radius: 61px;
+  width: 148px;
+  height: 43px;
+  font-weight: 900;
+}
+
+.darkmode {
+  color: #6809e1;
+  border: solid 1px #6809e1;
+}
+.darkmode:hover {
+  background-color: rgb(80, 227, 194);
+}
+.lightmode {
+  color: white;
+  border: solid 2px white;
+  background-color: #000;
+}

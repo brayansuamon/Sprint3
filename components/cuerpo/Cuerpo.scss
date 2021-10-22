@@ -1,0 +1,16 @@
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+  .titulo {
+    display: flex;
+    justify-content: center;
+    /* h1 {
+      font-size: 100%;
+    }*/
+  }
+  .buscador {
+    display: flex;
+  }
+}
