@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Header.scss";
+import Appcontext from "../../context/Appcontext";
 
 export default function Header() {
-  const [mostrarnocturno, setMostrarnocturno] = useState(false);
+  //const [mostrarnocturno, setMostrarnocturno] = useState(false);
+
+  const { mostrarnocturno, setMostrarnocturno } = useContext(Appcontext);
+  console.log(`${mostrarnocturno} mas ${setMostrarnocturno}`);
 
   const manejarClick = (e) => {
     setMostrarnocturno(!mostrarnocturno);

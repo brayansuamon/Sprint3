@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cuerpo.scss";
+import Appcontext from "../../context/Appcontext";
 
 export default function Cuerpo() {
+  const { mostrarnocturno } = useContext(Appcontext);
+  console.log(mostrarnocturno);
+
   return (
     <section className="cuerpo">
       <article className="titulo">
@@ -16,9 +20,9 @@ export default function Cuerpo() {
         <input type="text" placeholder="Buscar Gif" />
         <button className="busqueda">
           {mostrarnocturno ? (
-            <img src="./images/icon.search.svg" alt="Ligth" />
+            <img src="./images/icon-search.svg" alt="Ligth" />
           ) : (
-            <img src="./images/icon-search-mod-noc.svg" alt="" />
+            <img src="./images/icon-search-mod-noc.svg" alt="Night" />
           )}
         </button>
       </form>
