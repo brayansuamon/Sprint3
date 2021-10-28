@@ -4,7 +4,6 @@ import Appcontext from "../../context/Appcontext";
 
 export default function Cuerpo() {
   const { mostrarnocturno } = useContext(Appcontext);
-  console.log(mostrarnocturno);
 
   return (
     <section className="cuerpo">
@@ -17,7 +16,12 @@ export default function Cuerpo() {
         <img src="./images/ilustra_header.svg" alt="Ilustracion" />
       </div>
       <form className="buscador">
-        <input type="text" placeholder="Buscar Gif" />
+        <input
+          type="text"
+          placeholder="Buscar Gif"
+          className={`${mostrarnocturno ? "InputLigth" : "InputDark"}`}
+        />
+
         <button className="busqueda">
           {mostrarnocturno ? (
             <img src="./images/icon-search.svg" alt="Ligth" />

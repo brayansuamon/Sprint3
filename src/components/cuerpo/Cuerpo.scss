@@ -1,3 +1,5 @@
+@import "../../Variable.scss";
+
 .cuerpo {
   display: flex;
   flex-direction: column;
@@ -34,16 +36,26 @@
     justify-content: center;
     background-color: blue;
     width: 100%;
-    height: 40px;
+    height: 50px;
+
+    //.nav {
 
     input {
-      height: 90%;
+      height: 95%;
       width: 500px;
-      border: solid 1px #000;
       border-radius: 25px 0 0 25px;
-      /*::placeholder {
-        font-size: 50px;
-      }*/
+      font-size: 25px;
+      padding: 0 2.5%;
+
+      //}
+    }
+    .InputLigth {
+      border: solid 1px $Blanco;
+      background-color: $Negro;
+      color: $Gris;
+    }
+    .InputDark {
+      border: solid 1px $Negro;
     }
     @media screen and (max-width: 600px) {
       input {
@@ -52,9 +64,10 @@
     }
 
     .busqueda {
-      background-color: #6809e1;
+      background-color: $Moradoligth;
       border: none;
       border-radius: 0 25px 25px 0;
+      width: 60px;
     }
   }
 }

@@ -6,7 +6,6 @@ export default function Header() {
   //const [mostrarnocturno, setMostrarnocturno] = useState(false);
 
   const { mostrarnocturno, setMostrarnocturno } = useContext(Appcontext);
-  console.log(`${mostrarnocturno} mas ${setMostrarnocturno}`);
 
   const manejarClick = (e) => {
     setMostrarnocturno(!mostrarnocturno);

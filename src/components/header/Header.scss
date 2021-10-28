@@ -1,3 +1,5 @@
+@import "../../Variable.scss";
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -14,15 +16,16 @@
     border-radius: 61px;
     width: 148px;
     height: 43px;
-    // font-weight: 900;
+    font-weight: 900;
   }
   .ligthmode {
-    color: green;
+    color: white;
     border: solid 1px white;
+    background-color: $Negro;
   }
   .darkmode {
-    color: #6809e1;
-    border: solid 1px #6809e1;
+    color: $Moradoligth;
+    border: solid 1px $Moradoligth;
   }
   .darkmode:hover {
     background-color: rgb(80, 227, 194);
