@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Appcontext from "../../context/Appcontext";
 import Gifs from "../gifs/Gifs";
+import "./Cajagifs.scss";
 
 export default function Cajagifs() {
   //Importacion data
@@ -12,7 +13,9 @@ export default function Cajagifs() {
           return <Gifs {...gif} key={gif.id} id={gif.id} />;
         })
       ) : (
-        <nav>Cargando Gifs....</nav>
+        <div className="TituloGifs">
+          <h1>Realiza tu busqueda</h1>
+        </div>
       )}
     </main>
   );

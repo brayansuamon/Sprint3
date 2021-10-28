@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Appcontext from "../../context/Appcontext";
+import "./Buscador.scss";
+
 export default function Buscador() {
   //Global
   const { mostrarnocturno, setData } = useContext(Appcontext);
@@ -17,11 +19,11 @@ export default function Buscador() {
         return respuesta.json();
       })
       .then((datos) => {
-        setData(datos);
+        setData(datos.data);
         setBuscar(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error + "Error Fetch");
       });
   }, [buscar]);
 
@@ -38,7 +40,10 @@ export default function Buscador() {
       <button
         type="button"
         className="busqueda"
-        onClick={() => console.log("Hola")}
+        onClick={(e) => {
+          e.preventDefault();
+          setBuscar(true);
+        }}
       >
         {mostrarnocturno ? (
           <img src="./images/icon-search.svg" alt="Ligth" />
