@@ -1,14 +1,9 @@
 import React from "react";
 
-export default function Gifs() {
+export default function Gifs({ images: { downsized } }) {
   return (
     <div className="Gifs">
-      <div>
-        <h1>Hola</h1>
-      </div>
-      <div>
-        <h2>Como vas</h2>
-      </div>
+      <img src={`${downsized.url}`} alt="Imagen" />
     </div>
   );
 }

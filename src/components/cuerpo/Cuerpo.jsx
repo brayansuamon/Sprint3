@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import "./Cuerpo.scss";
-import Appcontext from "../../context/Appcontext";
+
+import Buscador from "../buscador/Buscador";
 
 export default function Cuerpo() {
-  const { mostrarnocturno } = useContext(Appcontext);
-
   return (
     <section className="cuerpo">
       <article className="titulo">
@@ -15,21 +14,7 @@ export default function Cuerpo() {
       <div className="imageheader">
         <img src="./images/ilustra_header.svg" alt="Ilustracion" />
       </div>
-      <form className="buscador">
-        <input
-          type="text"
-          placeholder="Buscar Gif"
-          className={`${mostrarnocturno ? "InputLigth" : "InputDark"}`}
-        />
-
-        <button className="busqueda">
-          {mostrarnocturno ? (
-            <img src="./images/icon-search.svg" alt="Ligth" />
-          ) : (
-            <img src="./images/icon-search-mod-noc.svg" alt="Night" />
-          )}
-        </button>
-      </form>
+      <Buscador />
     </section>
   );
 }
