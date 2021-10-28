@@ -9,7 +9,7 @@ export default function Cajagifs() {
     <main className="Cajagifs">
       {data.length > 0 ? (
         data.map((gif) => {
-          return <Gifs {...gif} key={gif.id} />;
+          return <Gifs {...gif} key={gif.id} id={gif.id} />;
         })
       ) : (
         <nav>Cargando Gifs....</nav>

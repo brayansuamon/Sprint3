@@ -19,6 +19,9 @@ export default function Buscador() {
       .then((datos) => {
         setData(datos);
         setBuscar(false);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, [buscar]);
 
@@ -32,7 +35,11 @@ export default function Buscador() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <button className="busqueda" onClick={() => setBuscar(true)}>
+      <button
+        type="button"
+        className="busqueda"
+        onClick={() => console.log("Hola")}
+      >
         {mostrarnocturno ? (
           <img src="./images/icon-search.svg" alt="Ligth" />
         ) : (
