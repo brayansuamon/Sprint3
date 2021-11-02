@@ -18,16 +18,16 @@
     height: 43px;
     font-weight: 900;
   }
-  .ligthmode {
+  .darkmode {
     color: white;
     border: solid 1px white;
     background-color: $Negro;
   }
-  .darkmode {
+  .ligthmode {
     color: $Moradoligth;
     border: solid 1px $Moradoligth;
   }
-  .darkmode:hover {
+  .ligthmode:hover {
     background-color: rgb(80, 227, 194);
   }
 }

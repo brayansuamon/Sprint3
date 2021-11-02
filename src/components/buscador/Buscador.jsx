@@ -32,7 +32,7 @@ export default function Buscador() {
       <input
         type="text"
         placeholder="Buscar Gif"
-        className={`${mostrarnocturno ? "InputLigth" : "InputDark"}`}
+        className={`${mostrarnocturno ? "InputDark" : "InputLigth"}`}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -46,9 +46,9 @@ export default function Buscador() {
         }}
       >
         {mostrarnocturno ? (
-          <img src="./images/icon-search.svg" alt="Ligth" />
-        ) : (
           <img src="./images/icon-search-mod-noc.svg" alt="Night" />
+        ) : (
+          <img src="./images/icon-search.svg" alt="Ligth" />
         )}
       </button>
     </form>

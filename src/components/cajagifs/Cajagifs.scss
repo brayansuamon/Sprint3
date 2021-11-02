@@ -1,17 +1,22 @@
 @import "../../Variable.scss";
 .Cajagifs {
-  background-color: green;
-  width: 60%;
+  background-color: $GrisLigth;
+  width: 70%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 1% 20%;
+  margin: 1% 15%;
 
   .TituloGifs {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .ModoN {
+    color: $Blanco;
+  }
+  .ModoL {
     color: $Moradoligth;
   }
 }

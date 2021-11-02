@@ -30,7 +30,7 @@ export default function Header() {
       </div>
       <button
         onClick={manejarClick}
-        className={`${mostrarnocturno ? "ligthmode" : "darkmode"} modos`}
+        className={`${mostrarnocturno ? "darkmode" : "ligthmode"} modos`}
       >
         {mostrarnocturno ? "MODO LIGTH" : "MODO DARK"}
       </button>
