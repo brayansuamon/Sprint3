@@ -17,7 +17,7 @@ export default function useBusqueda() {
   };
   useEffect(() => {
     let peticion = fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=b2nzBGK7PBzvBg49w5KLeSNBhNGd7Cbt&q=${search}&limit=15&offset=0&rating=g&lang=es`
+      `https://api.giphy.com/v1/gifs/search?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=15&offset=0&rating=g&lang=es`
     );
 
     peticion

@@ -10,10 +10,12 @@ export default function Cajagifs() {
   return (
     <main className="Cajagifs">
       {data.length > 0 ? (
-        // (<h1>Hola</h1>),
-        data.map((gif) => {
-          return <Gifs {...gif} key={gif.id} id={gif.id} />;
-        })
+        <>
+          <h1 className="Mensaje">Resultados de la búsqueda</h1>
+          {data.map((gif) => {
+            return <Gifs {...gif} key={gif.id} id={gif.id} />;
+          })}
+        </>
       ) : (
         <div className={`${TituloBusqueda} TituloGifs`}>
           <h1>Realiza tu busqueda</h1>

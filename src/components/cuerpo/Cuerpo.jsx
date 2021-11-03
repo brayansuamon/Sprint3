@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Cuerpo.scss";
 import Appcontext from "../../context/Appcontext";
 import Buscador from "../buscador/Buscador";
+import Autocomplete from "../autocomplete/Autocomplete";
 
 export default function Cuerpo() {
   const { mostrarnocturno } = useContext(Appcontext);
@@ -19,6 +20,7 @@ export default function Cuerpo() {
         <img src="./images/ilustra_header.svg" alt="Ilustracion" />
       </div>
       <Buscador />
+      <Autocomplete />
     </section>
   );
 }
