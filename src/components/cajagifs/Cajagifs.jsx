@@ -16,7 +16,6 @@ export default function Cajagifs() {
           <h1 className={`${TituloBusqueda} Mensaje`}>
             Resultados de la búsqueda
           </h1>
-
           {data.map((gif) => {
             return <Gifs {...gif} key={gif.id} id={gif.id} />;
           })}
