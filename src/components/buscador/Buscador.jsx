@@ -5,8 +5,12 @@ import "./Buscador.scss";
 export default function Buscador() {
   const busqueda = useBusqueda();
 
+  let buscadorcolor = busqueda.mostrarnocturno
+    ? "BuscadorNegro"
+    : "BuscadorBlanco";
+
   return (
-    <form className="buscador">
+    <form className={`${buscadorcolor} buscador`}>
       <input
         type="text"
         placeholder="Buscar Gif"

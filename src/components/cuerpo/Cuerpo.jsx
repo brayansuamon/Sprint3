@@ -7,10 +7,11 @@ import Autocomplete from "../autocomplete/Autocomplete";
 export default function Cuerpo() {
   const { mostrarnocturno } = useContext(Appcontext);
 
-  let ClaseTitulo = mostrarnocturno === true ? "NigthTitulo" : "LigthTitulo";
+  let ClaseTitulo = mostrarnocturno ? "NigthTitulo" : "LigthTitulo";
+  let cuerpocolor = mostrarnocturno ? "CuerpoNegro" : "CuerpoBlanco";
 
   return (
-    <section className="cuerpo">
+    <section className={`${cuerpocolor} cuerpo`}>
       <article className={`${ClaseTitulo} titulo`}>
         <h1>
           ¡Inspirate y busca los mejores <span className="GIFS">GIFS</span>!

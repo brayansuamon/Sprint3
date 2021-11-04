@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import useBusqueda from "./useBusqueda";
 import Appcontext from "../../context/Appcontext";
 
 export default function useAutocomplete() {
-  busqueda = useBusqueda();
-  const { setDataauto } = useContext(Appcontext);
-
+  const { setDataauto, search } = useContext(Appcontext);
   useEffect(() => {
     let autocompletado = fetch(
-      ` https://api.giphy.com/v1/gifs/search/tags?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${busqueda.search}&limit=5`
+      ` https://api.giphy.com/v1/gifs/search/tags?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=5`
     );
 
     autocompletado
@@ -16,7 +14,7 @@ export default function useAutocomplete() {
         return response.json();
       })
       .then((dataaut) => {
-        setdataauto(dataaut.data);
+        setDataauto(dataaut.data);
       });
-  }, [busqueda.search]);
+  }, [search]);
 }

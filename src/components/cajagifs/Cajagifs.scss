@@ -1,6 +1,13 @@
 @import "../../Variable.scss";
+.CajaNegra {
+  background-color: $Negro;
+}
+.CajaBlanca {
+  background-color: $Blanco;
+}
+
 .Cajagifs {
-  background-color: $GrisLigth;
+  background-color: $GrisDark;
   width: 70%;
   display: flex;
   justify-content: space-around;

@@ -3,16 +3,16 @@ import "./Header.scss";
 import Appcontext from "../../context/Appcontext";
 
 export default function Header() {
-  //const [mostrarnocturno, setMostrarnocturno] = useState(false);
-
   const { mostrarnocturno, setMostrarnocturno } = useContext(Appcontext);
 
   const manejarClick = (e) => {
     setMostrarnocturno(!mostrarnocturno);
   };
 
+  let modoNocturno = mostrarnocturno ? "darkmode" : "ligthmode";
+  let headercolor = mostrarnocturno ? "HeaderNegro" : "HeaderBlanco";
   return (
-    <header className="header">
+    <header className={`${headercolor} header`}>
       <div className="imagenheader">
         {mostrarnocturno ? (
           <img
@@ -28,10 +28,7 @@ export default function Header() {
           />
         )}
       </div>
-      <button
-        onClick={manejarClick}
-        className={`${mostrarnocturno ? "darkmode" : "ligthmode"} modos`}
-      >
+      <button onClick={manejarClick} className={`${modoNocturno} modos`}>
         {mostrarnocturno ? "MODO LIGTH" : "MODO DARK"}
       </button>
     </header>

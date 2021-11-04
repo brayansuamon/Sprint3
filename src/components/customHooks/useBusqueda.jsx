@@ -3,10 +3,9 @@ import Appcontext from "../../context/Appcontext";
 
 export default function useBusqueda() {
   //Global
-  const { mostrarnocturno, setData } = useContext(Appcontext);
+  const { mostrarnocturno, setData, setSearch, search, setBuscar, buscar } =
+    useContext(Appcontext);
   //Local
-  const [search, setSearch] = useState("");
-  const [buscar, setBuscar] = useState(false);
 
   const actualizarSearch = (e) => {
     setSearch(e.target.value);

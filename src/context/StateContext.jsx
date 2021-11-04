@@ -5,6 +5,8 @@ const Statecontext = ({ children }) => {
   const [mostrarnocturno, setMostrarnocturno] = useState(false);
   const [data, setData] = useState([]);
   const [dataauto, setDataauto] = useState([]);
+  const [search, setSearch] = useState("");
+  const [buscar, setBuscar] = useState(false);
 
   return (
     <Appcontext.Provider
@@ -15,6 +17,10 @@ const Statecontext = ({ children }) => {
         data,
         dataauto,
         setDataauto,
+        search,
+        setSearch,
+        buscar,
+        setBuscar,
       }}
     >
       {children}
