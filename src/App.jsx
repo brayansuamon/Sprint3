@@ -2,18 +2,20 @@ import React, { useContext } from "react";
 import Header from "./components/header/Header";
 import Cuerpo from "./components/cuerpo/Cuerpo";
 import Cajagifs from "./components/cajagifs/Cajagifs";
-//import "./App.scss";
-//import Appcontext from "./context/Appcontext";
+import "./App.scss";
+import Appcontext from "./context/Appcontext";
 
 export default function App() {
-  //const { mostrarnocturno } = useContext(Appcontext);
+  const { mostrarnocturno } = useContext(Appcontext);
 
-  // let modoapp = mostrarnocturno ? "ModoNegro" : "ModoBlanco";
+  let modoapp = mostrarnocturno ? "ModoNegro" : "ModoBlanco";
   return (
-    <div>
-      <Header />
-      <Cuerpo />
-      <Cajagifs />
+    <div className="modoapp">
+      <div>
+        <Header />
+        <Cuerpo />
+        <Cajagifs />
+      </div>
     </div>
   );
 }

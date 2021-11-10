@@ -5,14 +5,20 @@ import useBusqueda from "../customHooks/useBusqueda";
 import "./Autocomplete.scss";
 
 export default function Autocomplete() {
-  const { dataauto, data } = useContext(Appcontext);
+  const { dataauto, data, setSearch } = useContext(Appcontext);
   const busqueda = useBusqueda();
-  let invocacion = useAutocomplete();
+  //Invocar la función
+  useAutocomplete();
+
+  let actualizarSe = () => {
+    setSearch(dataauto[0].name);
+  };
+
   return (
     <>
       {dataauto.length > 0 && data.length === 0 ? (
         <ul className="formulario">
-          <li className="lisuperior" onClick={busqueda.actualizarBuscar}>
+          {/* <li className="lisuperior" onClick={actualizarSe}>
             {dataauto[0].name}
           </li>
           <li onClick={busqueda.actualizarBuscar}>{dataauto[1].name}</li>
@@ -20,7 +26,17 @@ export default function Autocomplete() {
           <li onClick={busqueda.actualizarBuscar}>{dataauto[3].name}</li>
           <li className="liinferior" onClick={busqueda.actualizarBuscar}>
             {dataauto[4].name}
-          </li>
+      </li>*/}
+          {dataauto.map((datoa) => {
+            return (
+              <li
+                onClick={busqueda.actualizarBuscar}
+                key={datoa.analytics_response_payload}
+              >
+                {datoa.name}
+              </li>
+            );
+          })}
         </ul>
       ) : null}
     </>

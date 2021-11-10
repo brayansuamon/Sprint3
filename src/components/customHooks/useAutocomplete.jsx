@@ -6,7 +6,7 @@ export default function useAutocomplete() {
   const { setDataauto, search } = useContext(Appcontext);
   useEffect(() => {
     let autocompletado = fetch(
-      ` https://api.giphy.com/v1/gifs/search/tags?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=5`
+      `https://api.giphy.com/v1/gifs/search/tags?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=5`
     );
 
     autocompletado
