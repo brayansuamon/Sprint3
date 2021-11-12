@@ -10,8 +10,11 @@ export default function App() {
 
   let modoapp = mostrarnocturno ? "ModoNegro" : "ModoBlanco";
   return (
-    <div className="modoapp">
+    <div className={`${modoapp} App`}>
       <div>
+        {/*mostrarnocturno
+          ? document.body.classList.add("ModoNegro")
+        : document.body.classList.remove("ModoNegro")*/}
         <Header />
         <Cuerpo />
         <Cajagifs />

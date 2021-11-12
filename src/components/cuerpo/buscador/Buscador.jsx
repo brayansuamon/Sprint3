@@ -1,5 +1,5 @@
 import React from "react";
-import useBusqueda from "../customHooks/useBusqueda";
+import useBusqueda from "../../customHooks/useBusqueda";
 import "./Buscador.scss";
 
 export default function Buscador() {
