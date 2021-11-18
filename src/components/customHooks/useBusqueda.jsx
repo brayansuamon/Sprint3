@@ -15,22 +15,24 @@ export default function useBusqueda() {
     setBuscar(true);
   };
   useEffect(() => {
-    let peticion = fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=15&offset=0&rating=g&lang=es`
-    );
+    if (buscar === true) {
+      let peticion = fetch(
+        `https://api.giphy.com/v1/gifs/search?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=15&offset=0&rating=g&lang=es`
+      );
 
-    peticion
-      .then((respuesta) => {
-        return respuesta.json();
-      })
-      .then((datos) => {
-        setData(datos.data);
-        setBuscar(false);
-      })
-      .catch((error) => {
-        console.log(error + "Error Fetch");
-      });
-  }, [buscar]);
+      peticion
+        .then((respuesta) => {
+          return respuesta.json();
+        })
+        .then((datos) => {
+          setData(datos.data);
+          setBuscar(false);
+        })
+        .catch((error) => {
+          console.log(error + "Error Fetch");
+        });
+    }
+  }, [buscar, search]);
   return {
     actualizarSearch,
     actualizarBuscar,
