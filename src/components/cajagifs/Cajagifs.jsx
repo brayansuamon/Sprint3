@@ -22,7 +22,7 @@ export default function Cajagifs() {
             })}
           </section>
         </div>
-      ) : dataauto.length > 0 ? null : (
+      ) : (
         <div className={`${TituloBusqueda} TituloGifs`}>
           <h1>Realiza tu busqueda</h1>
         </div>

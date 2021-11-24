@@ -5,7 +5,7 @@ import useBusqueda from "../../customHooks/useBusqueda";
 import "./Autocomplete.scss";
 
 export default function Autocomplete() {
-  const { dataauto, data, setSearch, setBuscar, buscar } =
+  const { dataauto, data, setSearch, setBuscar, buscar, setDataauto } =
     useContext(Appcontext);
   const busqueda = useBusqueda();
   //Invocar la función
@@ -13,23 +13,17 @@ export default function Autocomplete() {
 
   const cambio = (datoa) => {
     setSearch(datoa.name);
-    setBuscar(true);
+    // setBuscar(true);
+    setDataauto([]);
   };
 
+  console.log(dataauto.length);
   return (
     <>
-      {/*Falta averiguar que va en la condicion*/}
-      {dataauto.length > 0 && !buscar ? (
+      {/*Falta averiguar que va en la condicion
+      {dataauto.length > 0 && !buscar ? ( */}
+      {dataauto.length > 0 ? (
         <ul className="formulario">
-          {/* <li className="lisuperior" onClick={actualizarSe}>
-            {dataauto[0].name}
-          </li>
-          <li onClick={busqueda.actualizarBuscar}>{dataauto[1].name}</li>
-          <li onClick={busqueda.actualizarBuscar}>{dataauto[2].name}</li>
-          <li onClick={busqueda.actualizarBuscar}>{dataauto[3].name}</li>
-          <li className="liinferior" onClick={busqueda.actualizarBuscar}>
-            {dataauto[4].name}
-      </li>*/}
           {dataauto.map((datoa) => {
             return (
               <li

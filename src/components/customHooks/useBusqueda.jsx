@@ -14,8 +14,16 @@ export default function useBusqueda() {
     e.preventDefault();
     setBuscar(true);
   };
+  /*useEffect(() => {
+    if (search.length >= 1) {
+      setAutocomplete(true);
+    } else {
+      setAutocomplete(false);
+    }
+  }, [search]);*/
   useEffect(() => {
-    if (buscar === true) {
+    //El por Java entiende que buscar es true, no necesito especificarlo
+    if (buscar) {
       let peticion = fetch(
         `https://api.giphy.com/v1/gifs/search?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=15&offset=0&rating=g&lang=es`
       );
@@ -29,10 +37,10 @@ export default function useBusqueda() {
           setBuscar(false);
         })
         .catch((error) => {
-          console.log(error + "Error Fetch");
+          console.log("No se encontró la data");
         });
     }
-  }, [buscar, search]);
+  }, [buscar]);
   return {
     actualizarSearch,
     actualizarBuscar,

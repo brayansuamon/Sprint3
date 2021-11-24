@@ -4,17 +4,18 @@ import Appcontext from "../../context/Appcontext";
 
 export default function useAutocomplete() {
   const { setDataauto, search } = useContext(Appcontext);
-  useEffect(() => {
-    let autocompletado = fetch(
-      `https://api.giphy.com/v1/gifs/search/tags?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=5`
-    );
+  // useEffect(() => {
+  let autocompletado = fetch(
+    `https://api.giphy.com/v1/gifs/search/tags?api_key=chciLAiJmVF5UuOqMilNTkN8rcJTEiqT&q=${search}&limit=5`
+  );
 
-    autocompletado
-      .then((response) => {
-        return response.json();
-      })
-      .then((dataaut) => {
-        setDataauto(dataaut.data);
-      });
-  }, [search]);
+  autocompletado
+    .then((response) => {
+      return response.json();
+    })
+    .then((dataaut) => {
+      setDataauto(dataaut.data);
+      //Acá deberia activar el texto de autocomplete
+    });
+  //}, [search]);
 }
