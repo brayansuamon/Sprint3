@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 import Appcontext from "../../../context/Appcontext";
 import peticionListagifs from "../../../Peticiones/listagifs";
-import useAutocomplete from "../../customHooks/useAutocomplete";
-import useBusqueda from "../../customHooks/useBusqueda";
 import "./Autocomplete.scss";
 
 export default function Autocomplete() {
-  const { dataauto, setData, setSearch, setBuscar, buscar, setDataauto } =
-    useContext(Appcontext);
-  //const busqueda = useBusqueda();
-  //Invocar la función
-  // let invocacion = useAutocomplete();
+  const { dataauto, setData, setSearch, setDataauto } = useContext(Appcontext);
 
   const cambio = (datoa) => {
     setSearch(datoa.name);
@@ -25,15 +19,13 @@ export default function Autocomplete() {
         // setBuscar(false);
       })
       .catch((error) => {
-        console.log("No se encontró la data");
+        console.log("No se encontró la data autocomplete");
       });
   };
 
   console.log(dataauto.length);
   return (
     <>
-      {/*Falta averiguar que va en la condicion
-      {dataauto.length > 0 && !buscar ? ( */}
       {dataauto.length > 0 ? (
         <ul className="formulario">
           {dataauto.map((datoa) => {

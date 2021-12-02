@@ -6,8 +6,8 @@ const Statecontext = ({ children }) => {
   const [data, setData] = useState([]);
   const [dataauto, setDataauto] = useState([]);
   const [search, setSearch] = useState("");
-  const [buscar, setBuscar] = useState(false);
-
+  //const [buscar, setBuscar] = useState(false);
+  const [error, setError] = useState(false);
   return (
     <Appcontext.Provider
       value={{
@@ -19,8 +19,8 @@ const Statecontext = ({ children }) => {
         setDataauto,
         search,
         setSearch,
-        buscar,
-        setBuscar,
+        // buscar,
+        //setBuscar,
       }}
     >
       {children}

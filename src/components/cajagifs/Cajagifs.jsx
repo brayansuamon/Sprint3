@@ -5,7 +5,7 @@ import "./Cajagifs.scss";
 
 export default function Cajagifs() {
   //Importacion data
-  const { mostrarnocturno, data, dataauto } = useContext(Appcontext);
+  const { mostrarnocturno, data } = useContext(Appcontext);
   let TituloBusqueda = mostrarnocturno ? "ModoN" : "ModoL";
   let colorcaja = mostrarnocturno ? "CajaNegra" : "CajaBlanca";
 

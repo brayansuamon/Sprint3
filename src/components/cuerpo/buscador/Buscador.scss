@@ -28,10 +28,12 @@
     background-color: $Negro;
     color: $GrisDark;
   }
+
   .InputLigth {
     border: solid 1px $Negro;
     color: $Negro;
   }
+
   @media screen and (max-width: 600px) {
     input {
       width: 250px;

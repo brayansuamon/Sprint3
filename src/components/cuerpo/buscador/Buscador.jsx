@@ -2,16 +2,27 @@ import React, { useContext } from "react";
 import Appcontext from "../../../context/Appcontext";
 import peticionAutocompletado from "../../../Peticiones/autocomplete";
 import peticionListagifs from "../../../Peticiones/listagifs";
-import useBusqueda from "../../customHooks/useBusqueda";
+
 import "./Buscador.scss";
 
 export default function Buscador() {
-  const { search, setDataauto, setSearch, mostrarnocturno } =
+  const { search, setDataauto, setSearch, mostrarnocturno, setData } =
     useContext(Appcontext);
 
   const actualizarBuscar = (e) => {
     e.preventDefault();
-    setBuscar(true);
+    setDataauto([]);
+    peticionListagifs(search)
+      .then((respuesta) => {
+        return respuesta.json();
+      })
+      .then((datos) => {
+        setData(datos.data);
+        // setBuscar(false);
+      })
+      .catch((error) => {
+        console.log("No se encontró la data autocomplete");
+      });
   };
 
   const actualizarSearch = (e) => {
@@ -25,20 +36,21 @@ export default function Buscador() {
       });
     setSearch(e.target.value);
   };
-  /*  let buscadorcolor = busqueda.mostrarnocturno
-    ? "BuscadorNegro"
-    : "BuscadorBlanco";*/
-  let buscadorcolor = "Negro";
+  let buscadorcolor = mostrarnocturno ? "BuscadorNegro" : "BuscadorBlanco";
 
   return (
     <form className={`${buscadorcolor} buscador`}>
       <input
-        type="text"
+        type="search"
         placeholder="Buscar Gif"
         className={`${mostrarnocturno ? "InputDark" : "InputLigth"}`}
         value={search}
         onChange={actualizarSearch}
-        //onKeyPress={actualizarSearch}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            actualizarBuscar(e);
+          }
+        }}
       />
 
       <button type="button" className="busqueda" onClick={actualizarBuscar}>
